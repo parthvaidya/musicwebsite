@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Login } from './Login';
+import config from './config.json';
 
 
 const AWS = require('aws-sdk');
@@ -13,10 +14,10 @@ AWS.config.logger.level = 'debug';
 
 AWS.config.update({
     region: 'us-east-1',
-    // credentials: {
-    //   accessKeyId: 'ASIAT2SZTRLJOBTBVFQM',
-    //   secretAccessKey: 'y0yKF0UkXhD2TZnij+3FSudEDatg1vB+nMeWaCAb',
-    //   sessionToken  : 'FwoGZXIvYXdzEA0aDOVogX2CL/duMb2InSLNAUhMm4RDdsEljsHqrVij6pgQ8KiQXI5tfVoVqBFBm5XEY2WLMzOXKSyAxW4lqFwu1Pt8YpVgjqU5ORMUeeW+9LxxvqjRuj/loDrjNVHUbP/ORSglA0xBfw5fKOc9RjSj+cA0lAppTOZEndjXfZIKPnfkGAhiBRScq6lOXwATsRdkb37zlvHJrj2SpJJMx7m775MK5M9f6NSwguEpVH/g7w/AuRw6i19EI/zxGKlXNfTyIzsXvLEO51pZjf17thSpwWV38EjA1L0UyiTRMJcohvuqoQYyLfwtne1U+/218YOtmIJ20zBmGPyoZQPfSTUr7yQuairUx+cCC0JdG9+FxyYhUA=='}
+    credentials: {
+      accessKeyId: config.REACT_APP_ACCESSKEYID,
+      secretAccessKey: config.REACT_APP_SECRETACCESSKEY,
+      sessionToken  : config.REACT_APP_SESSIONTOKEN}
     
     
   });
